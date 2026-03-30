@@ -76,7 +76,7 @@ function Navbar() {
           <li><Link to="/servicios">Servicios</Link></li>
           <li><Link to="/mobiliario">Mobiliario</Link></li>
           <li><Link to="/referencias">Referencias</Link></li>
-          <li><Link to="/sobrenosotros">Sobre</Link></li>
+          <li><Link to="/sobrenosotros">Sobre nosotros</Link></li>
           <li><Link to="/contacto">Contacto</Link></li>
         </ul>
       )}
