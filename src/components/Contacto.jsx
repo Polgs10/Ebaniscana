@@ -1,4 +1,5 @@
-import { Link } from "react-router-dom"
+import { useState } from "react"
+import emailjs from "@emailjs/browser"
 
 function Contacto() {
 
@@ -6,6 +7,37 @@ function Contacto() {
     { label: "Llamar a Luis", number: "657927957", type: "tel" },
     { label: "Llamar a José", number: "616989616", type: "tel" }
   ]
+
+  const [formData, setFormData] = useState({
+    nombre: "", email: "", telefono: "", ciudad: "", mensaje: ""
+  })
+  const [estado, setEstado] = useState(null) // "enviando" | "ok" | "error"
+
+  const handleChange = (e) => {
+    setFormData({ ...formData, [e.target.name]: e.target.value })
+  }
+
+  const handleSubmit = async () => {
+    setEstado("enviando")
+    try {
+      await emailjs.send(
+        "service_yeeoz1g",
+        "template_4kc1a1f",
+        {
+          nombre:   formData.nombre,
+          email:    formData.email,
+          telefono: formData.telefono,
+          ciudad:   formData.ciudad,
+          mensaje:  formData.mensaje,
+        },
+        "9QZ-memxSyPdfwuFJ"
+      )
+      setEstado("ok")
+      setFormData({ nombre: "", email: "", telefono: "", ciudad: "", mensaje: "" })
+    } catch (error) {
+      setEstado("error")
+    }
+  }
 
   return (
     <>
@@ -42,27 +74,58 @@ function Contacto() {
               <div className="grid grid-cols-2 gap-4">
 
                 <input
+                  name="nombre"
+                  value={formData.nombre}
+                  onChange={handleChange}
                   placeholder="Nombre"
                   className="p-3 border border-gray-200 rounded-lg focus:outline-none focus:border-[#C89B6D] col-span-1"
                 />
                 <input
+                  name="email"
+                  value={formData.email}
+                  onChange={handleChange}
                   placeholder="Email"
                   className="p-3 border border-gray-200 rounded-lg focus:outline-none focus:border-[#C89B6D] col-span-1"
                 />
                 <input
+                  name="telefono"
+                  value={formData.telefono}
+                  onChange={handleChange}
                   placeholder="Teléfono"
                   className="p-3 border border-gray-200 rounded-lg focus:outline-none focus:border-[#C89B6D] col-span-1"
                 />
                 <input
+                  name="ciudad"
+                  value={formData.ciudad}
+                  onChange={handleChange}
                   placeholder="Ciudad"
                   className="p-3 border border-gray-200 rounded-lg focus:outline-none focus:border-[#C89B6D] col-span-1"
                 />
                 <textarea
+                  name="mensaje"
+                  value={formData.mensaje}
+                  onChange={handleChange}
                   placeholder="Cuéntanos tu proyecto..."
                   className="col-span-2 p-3 border border-gray-200 rounded-lg h-32 focus:outline-none focus:border-[#C89B6D] resize-none"
                 />
-                <button className="col-span-2 bg-[#8B5A2B] text-white py-3 rounded-lg hover:bg-[#C89B6D] transition-all duration-300 font-semibold">
-                  Enviar mensaje
+
+                {estado === "ok" && (
+                  <p className="col-span-2 text-green-600 text-center font-medium">
+                    ✅ Mensaje enviado correctamente
+                  </p>
+                )}
+                {estado === "error" && (
+                  <p className="col-span-2 text-red-500 text-center font-medium">
+                    ❌ Error al enviar. Inténtalo de nuevo.
+                  </p>
+                )}
+
+                <button
+                  onClick={handleSubmit}
+                  disabled={estado === "enviando"}
+                  className="col-span-2 bg-[#8B5A2B] text-white py-3 rounded-lg hover:bg-[#C89B6D] transition-all duration-300 font-semibold disabled:opacity-60"
+                >
+                  {estado === "enviando" ? "Enviando..." : "Enviar mensaje"}
                 </button>
 
               </div>
@@ -99,9 +162,10 @@ function Contacto() {
               {/* BOTONES */}
               <div className="flex flex-col gap-3">
                 {telefonos.map((tel, index) => {
-                  const link = tel.type === "wa"
-                    ? `https://wa.me/${tel.number.replace("+", "")}`
-                    : `tel:${tel.number}`
+                  const link =
+                    tel.type === "wa"
+                      ? `https://wa.me/${tel.number.replace("+", "")}`
+                      : `tel:${tel.number}`
 
                   return (
                     <a
@@ -132,7 +196,7 @@ function Contacto() {
           </div>
 
         </div>
-      </section>      
+      </section>
 
     </>
   )

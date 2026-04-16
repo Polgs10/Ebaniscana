@@ -21,26 +21,34 @@ return(
         </div>
 
         <div>
-            <h4 className="font-semibold mb-4">
-            Navegación
-            </h4>
-
+            <h4 className="font-semibold mb-4">Navegación</h4>
             <ul className="space-y-2 text-gray-300">
-                <li><Link to="/">Inicio</Link></li>
-                <li><Link to="/servicios">Servicios</Link></li>
-                <li><Link to="/mobiliario">Mobiliario</Link></li>
-                <li><Link to="/referencias">Referencias</Link></li>
+                <li className="group relative w-fit">
+                <Link to="/" className="transition-all duration-300 group-hover:text-[#C89B6D] group-hover:-translate-y-1 inline-block">Inicio</Link>
+                <span className="absolute left-0 bottom-0 w-0 h-[2px] bg-[#C89B6D] transition-all duration-300 group-hover:w-full"></span>
+                </li>
+                <li className="group relative w-fit">
+                <Link to="/servicios" className="transition-all duration-300 group-hover:text-[#C89B6D] group-hover:-translate-y-1 inline-block">Servicios</Link>
+                <span className="absolute left-0 bottom-0 w-0 h-[2px] bg-[#C89B6D] transition-all duration-300 group-hover:w-full"></span>
+                </li>
+                <li className="group relative w-fit">
+                <Link to="/referencias" className="transition-all duration-300 group-hover:text-[#C89B6D] group-hover:-translate-y-1 inline-block">Referencias</Link>
+                <span className="absolute left-0 bottom-0 w-0 h-[2px] bg-[#C89B6D] transition-all duration-300 group-hover:w-full"></span>
+                </li>
             </ul>
         </div>
 
         <div>
-            <h4 className="font-semibold mb-4">
-            Empresa
-            </h4>
-
+            <h4 className="font-semibold mb-4">Empresa</h4>
             <ul className="space-y-2 text-gray-300">
-                <li><Link to="/sobre">Sobre Nosotros</Link></li>
-                <li><Link to="/contacto">Contacto</Link></li>
+                <li className="group relative w-fit">
+                <Link to="/sobre" className="transition-all duration-300 group-hover:text-[#C89B6D] group-hover:-translate-y-1 inline-block">Sobre Nosotros</Link>
+                <span className="absolute left-0 bottom-0 w-0 h-[2px] bg-[#C89B6D] transition-all duration-300 group-hover:w-full"></span>
+                </li>
+                <li className="group relative w-fit">
+                <Link to="/contacto" className="transition-all duration-300 group-hover:text-[#C89B6D] group-hover:-translate-y-1 inline-block">Contacto</Link>
+                <span className="absolute left-0 bottom-0 w-0 h-[2px] bg-[#C89B6D] transition-all duration-300 group-hover:w-full"></span>
+                </li>
             </ul>
         </div>
 
@@ -54,7 +62,11 @@ return(
             </p>
 
             <p className="text-gray-300">
-            📞 +34 600 000 000
+            📞 657927955
+            </p>
+
+            <p className="text-gray-300">
+            📞 616989616
             </p>
 
             <p className="text-gray-300">

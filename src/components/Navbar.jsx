@@ -35,13 +35,13 @@ function Navbar() {
             <span className="absolute left-0 bottom-0 w-0 h-[2px] bg-[#C89B6D] transition-all duration-300 group-hover:w-full"></span>
           </li>
 
-          <li className="group relative">
+          {/* <li className="group relative">
             <Link to="/mobiliario" className="transition-all duration-300 group-hover:text-[#C89B6D] group-hover:-translate-y-1 inline-block">
               Mobiliario
             </Link>
 
             <span className="absolute left-0 bottom-0 w-0 h-[2px] bg-[#C89B6D] transition-all duration-300 group-hover:w-full"></span>
-          </li>
+          </li> */}
 
           <li className="group relative">
             <Link to="/referencias" className="transition-all duration-300 group-hover:text-[#C89B6D] group-hover:-translate-y-1 inline-block">
@@ -53,7 +53,7 @@ function Navbar() {
 
           <li className="group relative">
             <Link to="/sobrenosotros" className="transition-all duration-300 group-hover:text-[#C89B6D] group-hover:-translate-y-1 inline-block">
-              Sobre nosotros
+              Sobre Nosotros
             </Link>
 
             <span className="absolute left-0 bottom-0 w-0 h-[2px] bg-[#C89B6D] transition-all duration-300 group-hover:w-full"></span>
@@ -73,10 +73,11 @@ function Navbar() {
 
       {open && (
         <ul className="md:hidden mt-4 flex flex-col gap-4 text-center animate-fadeIn">
+          <li><Link to="/">Inicio</Link></li>
           <li><Link to="/servicios">Servicios</Link></li>
-          <li><Link to="/mobiliario">Mobiliario</Link></li>
+          {/* <li><Link to="/mobiliario">Mobiliario</Link></li> */}
           <li><Link to="/referencias">Referencias</Link></li>
-          <li><Link to="/sobrenosotros">Sobre nosotros</Link></li>
+          <li><Link to="/sobrenosotros">Sobre Nosotros</Link></li>
           <li><Link to="/contacto">Contacto</Link></li>
         </ul>
       )}
