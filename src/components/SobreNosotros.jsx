@@ -5,17 +5,17 @@ function SobreNosotros() {
   const bloques = [
     {
       titulo: "Experiencia y Profesionalidad",
-      imagen: "https://res.cloudinary.com/da5rambq9/image/upload/w_600,h_400,c_fill/v1774892046/P1010092_JPG_vly0sa.jpg",
+      imagen: "https://res.cloudinary.com/da5rambq9/image/upload/q_auto/f_auto/v1776436199/P1010092_JPG_ehekjx.avif",
       texto: "Ebaniscana es una empresa situada en Madrid con vocación internacional. Contamos con profesionales altamente cualificados y con amplia experiencia en carpintería y ebanistería."
     },
     {
       titulo: "Calidad y Presupuesto",
-      imagen: "https://res.cloudinary.com/da5rambq9/image/upload/w_600,h_400,c_fill/v1774892074/P1010264_JPG_gig9re.jpg",
+      imagen: "https://res.cloudinary.com/da5rambq9/image/upload/q_auto/f_auto/v1776436198/P1010264_JPG_c8haal.avif",
       texto: "Ofrecemos servicios integrales de diseño, fabricación y montaje. Siempre con un presupuesto claro y cumpliendo plazos establecidos."
     },
     {
       titulo: "Asesoramiento Personalizado",
-      imagen: "https://res.cloudinary.com/da5rambq9/image/upload/w_600,h_400,c_fill/v1774892083/Catas_202_JPG_wmgsvu.jpg",
+      imagen: "https://res.cloudinary.com/da5rambq9/image/upload/q_auto/f_auto/v1776436200/Catas_2_JPG_tyj810.avif",
       texto: "Acompañamos al cliente desde el primer momento, ofreciendo soluciones adaptadas y garantizando resultados de máxima calidad."
     }
   ]
@@ -35,7 +35,7 @@ function SobreNosotros() {
         <div
           className="absolute inset-0 bg-cover bg-center"
           style={{
-            backgroundImage: "url(https://res.cloudinary.com/da5rambq9/image/upload/w_1920,h_600,c_fill/v1774892046/P1010092_JPG_vly0sa.jpg)"
+            backgroundImage: "url(https://res.cloudinary.com/da5rambq9/image/upload/v1776431995/le_dome_7_dibpdy.jpg)"
           }}
         />
         <div className="absolute inset-0 bg-[#1f2933]/70" />

@@ -9,9 +9,19 @@ function Navbar() {
 
       <div className="max-w-6xl mx-auto flex justify-between items-center">
 
-        <h1 className="text-2xl font-bold text-[#C89B6D]">
+      <Link to="/" className="flex items-center gap-3">
+
+        <img
+          src="/EbaniscanaLogo.png"
+          alt="Ebaniscana"
+          className="h-10 w-auto"
+        />
+
+        <span className="text-2xl font-bold text-[#C89B6D]">
           Ebaniscana
-        </h1>
+        </span>
+
+      </Link>
 
         <div className="md:hidden">
           <button onClick={() => setOpen(!open)}>☰</button>

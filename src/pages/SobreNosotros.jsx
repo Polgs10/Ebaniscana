@@ -1,11 +1,10 @@
 import SobreNosotros from "../components/SobreNosotros"
 
 function SobreNosotrosPage(){
-
-return(
-<>
-<SobreNosotros/>
-</>
+    return(
+    <>
+        <SobreNosotros/>
+    </>
 )
 
 }

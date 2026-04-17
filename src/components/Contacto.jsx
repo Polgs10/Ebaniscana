@@ -47,7 +47,7 @@ function Contacto() {
         <div
           className="absolute inset-0 bg-cover bg-center"
           style={{
-            backgroundImage: "url(https://res.cloudinary.com/da5rambq9/image/upload/w_1920,h_600,c_fill/v1774892046/P1010092_JPG_vly0sa.jpg)"
+            backgroundImage: "url(https://res.cloudinary.com/da5rambq9/image/upload/v1776431997/le_dome_14_hictky.jpg)"
           }}
         />
         <div className="absolute inset-0 bg-[#1f2933]/70" />

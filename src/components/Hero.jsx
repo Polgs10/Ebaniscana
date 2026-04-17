@@ -10,7 +10,7 @@ function Hero() {
         <div
           className="absolute inset-0 bg-cover bg-center"
           style={{
-            backgroundImage: "url(https://res.cloudinary.com/da5rambq9/image/upload/w_1920,h_1080,c_fill/v1774893952/0ea8a5_bbbb665b98b84dfa86813f1dfa9150b4_mv2_bk1frc.jpg)"
+            backgroundImage: "url(https://res.cloudinary.com/da5rambq9/image/upload/v1776431987/faustino_4_l81um6.jpg)"
           }}
         />
 
@@ -100,7 +100,7 @@ function Hero() {
           </div>
 
           <img
-            src="https://res.cloudinary.com/da5rambq9/image/upload/v1774894680/0ea8a5_9a8538e08dd34eea985c0311c82e49ef_mv2_gj8jyt.gif"
+            src="https://res.cloudinary.com/da5rambq9/image/upload/v1776431982/1868_FP542492_indesign_wy0ari.jpg"
             className="rounded-xl shadow-lg w-full object-cover"
           />
 

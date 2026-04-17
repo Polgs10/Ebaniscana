@@ -6,17 +6,17 @@ function Servicios() {
     {
       titulo: "Diseño",
       descripcion: "Realizamos los planos necesarios de forma que el diseño sea el óptimo y el resultado final a obtener, respecto a acabados, colores, etc., el deseado por el cliente.",
-      imagen: "https://res.cloudinary.com/da5rambq9/image/upload/v1774895242/Sketchup_tidwyl.jpg"
+      imagen: "https://res.cloudinary.com/da5rambq9/image/upload/q_auto/f_auto/v1776436503/ChatGPT_Image_17_abr_2026_16_32_15_kggbsn.png"
     },
     {
       titulo: "Elaboración",
       descripcion: "Nuestros profesionales altamente cualificados y experimentados realizarán los trabajos con los materiales de alta calidad acordados, utilizando las técnicas tradicionales y modernas necesarias para obtener los mejores resultados.",
-      imagen: "https://res.cloudinary.com/da5rambq9/image/upload/v1774895230/9920b34d56e478a64163e628175b5ede_ajur5m.jpg"
+      imagen: "https://res.cloudinary.com/da5rambq9/image/upload/q_auto/f_auto/v1776436505/17_abr_2026_16_34_08_osksyc.png"
     },
     {
       titulo: "Montaje",
       descripcion: "Tenemos una gran experiencia en el montaje en obra en todo tipo de proyectos, desde superestruturas para museos o integrados en proyectos completos de construcción de viviendas, oficinas o locales comerciales.",
-      imagen: "https://res.cloudinary.com/da5rambq9/image/upload/v1774895389/20130902_145700_ytj3we.jpg"
+      imagen: "https://res.cloudinary.com/da5rambq9/image/upload/q_auto/f_auto/v1776436620/ChatGPT_Image_17_abr_2026_16_36_50_bm5g05.png"
     }
   ]
 
@@ -37,7 +37,7 @@ function Servicios() {
         <div
           className="absolute inset-0 bg-cover bg-center"
           style={{
-            backgroundImage: "url(https://res.cloudinary.com/da5rambq9/image/upload/w_1920,h_600,c_fill/v1774893952/0ea8a5_bbbb665b98b84dfa86813f1dfa9150b4_mv2_bk1frc.jpg)"
+            backgroundImage: "url(https://res.cloudinary.com/da5rambq9/image/upload/v1776431994/le_dome_2_zwokpd.jpg)"
           }}
         />
         <div className="absolute inset-0 bg-[#1f2933]/70" />

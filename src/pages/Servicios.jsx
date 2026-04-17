@@ -1,11 +1,10 @@
 import Servicios from "../components/Servicios"
 
 function ServiciosPage(){
-
-return(
-<>
-<Servicios/>
-</>
+    return(
+    <>
+        <Servicios/>
+    </>
 )
 
 }

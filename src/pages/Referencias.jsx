@@ -1,11 +1,10 @@
 import Referencias from "../components/Referencias"
 
 function ReferenciasPage(){
-
-return(
-<>
-<Referencias/>
-</>
+    return(
+    <>
+        <Referencias/>
+    </>
 )
 
 }
