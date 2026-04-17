@@ -11,13 +11,53 @@ function Contacto() {
   const [formData, setFormData] = useState({
     nombre: "", email: "", telefono: "", ciudad: "", mensaje: ""
   })
-  const [estado, setEstado] = useState(null) // "enviando" | "ok" | "error"
+  const [estado, setEstado] = useState(null)
+  const [errors, setErrors] = useState({})
+  const [touched, setTouched] = useState({})
+
+  const rules = {
+    nombre:   { min: 2, max: 60, pattern: /^[a-zA-ZÀ-ÿ\s'-]+$/, patternMsg: "Solo letras y espacios" },
+    email:    { pattern: /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/, patternMsg: "Introduce un email válido" },
+    telefono: { pattern: /^[+\d\s\-()\\.]{7,15}$/, patternMsg: "Número no válido (7–15 dígitos)" },
+    ciudad:   { min: 2, max: 60, pattern: /^[a-zA-ZÀ-ÿ\s'-]+$/, patternMsg: "Solo letras y espacios" },
+    mensaje:  { min: 10, max: 1000 },
+  }
+
+  const getError = (field, value) => {
+    const r = rules[field]
+    if (!value || value.trim() === "") return "Este campo es obligatorio"
+    const v = value.trim()
+    if (r.min && v.length < r.min) return `Mínimo ${r.min} caracteres`
+    if (r.max && v.length > r.max) return `Máximo ${r.max} caracteres`
+    if (r.pattern && !r.pattern.test(v)) return r.patternMsg
+    return null
+  }
+
+  const allValid = () =>
+    Object.keys(rules).every(f => !getError(f, formData[f]))
 
   const handleChange = (e) => {
-    setFormData({ ...formData, [e.target.name]: e.target.value })
+    const { name, value } = e.target
+    setFormData(prev => ({ ...prev, [name]: value }))
+    if (touched[name]) {
+      setErrors(prev => ({ ...prev, [name]: getError(name, value) }))
+    }
+  }
+
+  const handleBlur = (e) => {
+    const { name, value } = e.target
+    setTouched(prev => ({ ...prev, [name]: true }))
+    setErrors(prev => ({ ...prev, [name]: getError(name, value) }))
   }
 
   const handleSubmit = async () => {
+    // Marcar todos los campos como tocados y mostrar errores
+    const allTouched = Object.keys(rules).reduce((acc, f) => ({ ...acc, [f]: true }), {})
+    const allErrors = Object.keys(rules).reduce((acc, f) => ({ ...acc, [f]: getError(f, formData[f]) }), {})
+    setTouched(allTouched)
+    setErrors(allErrors)
+    if (!allValid()) return
+
     setEstado("enviando")
     try {
       await emailjs.send(
@@ -34,10 +74,27 @@ function Contacto() {
       )
       setEstado("ok")
       setFormData({ nombre: "", email: "", telefono: "", ciudad: "", mensaje: "" })
+      setTouched({})
+      setErrors({})
     } catch (error) {
       setEstado("error")
     }
   }
+
+  const inputClass = (field) =>
+    `p-3 border rounded-lg focus:outline-none transition-colors duration-200 w-full
+    ${touched[field] && errors[field]
+      ? "border-red-400 bg-red-50 focus:border-red-400"
+      : "border-gray-200 focus:border-[#C89B6D]"
+    }`
+
+  const ErrorMsg = ({ field }) =>
+    touched[field] && errors[field] ? (
+      <p className="text-red-500 text-xs mt-1 flex items-center gap-1">
+        <span className="inline-block w-1.5 h-1.5 rounded-full bg-red-500 flex-shrink-0" />
+        {errors[field]}
+      </p>
+    ) : null
 
   return (
     <>
@@ -73,42 +130,76 @@ function Contacto() {
               <div className="w-10 h-1 bg-[#C89B6D] mb-6" />
               <div className="grid grid-cols-2 gap-4">
 
-                <input
-                  name="nombre"
-                  value={formData.nombre}
-                  onChange={handleChange}
-                  placeholder="Nombre"
-                  className="p-3 border border-gray-200 rounded-lg focus:outline-none focus:border-[#C89B6D] col-span-1"
-                />
-                <input
-                  name="email"
-                  value={formData.email}
-                  onChange={handleChange}
-                  placeholder="Email"
-                  className="p-3 border border-gray-200 rounded-lg focus:outline-none focus:border-[#C89B6D] col-span-1"
-                />
-                <input
-                  name="telefono"
-                  value={formData.telefono}
-                  onChange={handleChange}
-                  placeholder="Teléfono"
-                  className="p-3 border border-gray-200 rounded-lg focus:outline-none focus:border-[#C89B6D] col-span-1"
-                />
-                <input
-                  name="ciudad"
-                  value={formData.ciudad}
-                  onChange={handleChange}
-                  placeholder="Ciudad"
-                  className="p-3 border border-gray-200 rounded-lg focus:outline-none focus:border-[#C89B6D] col-span-1"
-                />
-                <textarea
-                  name="mensaje"
-                  value={formData.mensaje}
-                  onChange={handleChange}
-                  placeholder="Cuéntanos tu proyecto..."
-                  className="col-span-2 p-3 border border-gray-200 rounded-lg h-32 focus:outline-none focus:border-[#C89B6D] resize-none"
-                />
+                {/* Nombre */}
+                <div className="col-span-1">
+                  <input
+                    name="nombre"
+                    value={formData.nombre}
+                    onChange={handleChange}
+                    onBlur={handleBlur}
+                    placeholder="Nombre"
+                    className={inputClass("nombre")}
+                  />
+                  <ErrorMsg field="nombre" />
+                </div>
 
+                {/* Email */}
+                <div className="col-span-1">
+                  <input
+                    name="email"
+                    value={formData.email}
+                    onChange={handleChange}
+                    onBlur={handleBlur}
+                    placeholder="Email"
+                    className={inputClass("email")}
+                  />
+                  <ErrorMsg field="email" />
+                </div>
+
+                {/* Teléfono */}
+                <div className="col-span-1">
+                  <input
+                    name="telefono"
+                    value={formData.telefono}
+                    onChange={handleChange}
+                    onBlur={handleBlur}
+                    placeholder="Teléfono"
+                    className={inputClass("telefono")}
+                  />
+                  <ErrorMsg field="telefono" />
+                </div>
+
+                {/* Ciudad */}
+                <div className="col-span-1">
+                  <input
+                    name="ciudad"
+                    value={formData.ciudad}
+                    onChange={handleChange}
+                    onBlur={handleBlur}
+                    placeholder="Ciudad"
+                    className={inputClass("ciudad")}
+                  />
+                  <ErrorMsg field="ciudad" />
+                </div>
+
+                {/* Mensaje */}
+                <div className="col-span-2">
+                  <textarea
+                    name="mensaje"
+                    value={formData.mensaje}
+                    onChange={handleChange}
+                    onBlur={handleBlur}
+                    placeholder="Cuéntanos tu proyecto..."
+                    className={`p-3 border rounded-lg h-32 focus:outline-none resize-none transition-colors duration-200 w-full
+                      ${touched.mensaje && errors.mensaje
+                        ? "border-red-400 bg-red-50 focus:border-red-400"
+                        : "border-gray-200 focus:border-[#C89B6D]"
+                      }`}
+                  />
+                  <ErrorMsg field="mensaje" />
+                </div>
+
+                {/* Feedback envío */}
                 {estado === "ok" && (
                   <p className="col-span-2 text-green-600 text-center font-medium">
                     ✅ Mensaje enviado correctamente
@@ -120,10 +211,12 @@ function Contacto() {
                   </p>
                 )}
 
+                {/* Botón */}
                 <button
                   onClick={handleSubmit}
                   disabled={estado === "enviando"}
-                  className="col-span-2 bg-[#8B5A2B] text-white py-3 rounded-lg hover:bg-[#C89B6D] transition-all duration-300 font-semibold disabled:opacity-60"
+                  className="col-span-2 bg-[#8B5A2B] text-white py-3 rounded-lg hover:bg-[#C89B6D]
+                             transition-all duration-300 font-semibold disabled:opacity-60 disabled:cursor-not-allowed"
                 >
                   {estado === "enviando" ? "Enviando..." : "Enviar mensaje"}
                 </button>
