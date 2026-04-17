@@ -8,7 +8,7 @@ function Referencias() {
 
   const proyectos = [
     {
-      titulo: "Le dome",
+      titulo: "Vivero de madera",
       descripcion: "Vivero de madera",
       imagenes: [
         "https://res.cloudinary.com/da5rambq9/image/upload/q_auto/f_auto/v1776431987/faustino_4_l81um6.jpg",

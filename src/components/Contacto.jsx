@@ -239,15 +239,15 @@ function Contacto() {
                   </div>
                   <div className="flex items-center gap-3">
                     <span className="text-[#C89B6D] text-xl">📞</span>
-                    <span>689 575 139</span>
+                    <span>657 927 957</span>
                   </div>
                   <div className="flex items-center gap-3">
                     <span className="text-[#C89B6D] text-xl">✉️</span>
-                    <span>contacto@ebaniscana.com</span>
+                    <span>info@ebaniscana.com</span>
                   </div>
                   <div className="flex items-center gap-3">
                     <span className="text-[#C89B6D] text-xl">⏰</span>
-                    <span>Lunes a Viernes: 8:00 - 14:00 y 16:00 - 19:00</span>
+                    <span>Lunes a Viernes: 8:30 - 13:30 y 15:00 - 18:00</span>
                   </div>
                 </div>
               </div>
