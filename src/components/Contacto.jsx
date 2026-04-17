@@ -61,8 +61,8 @@ function Contacto() {
     setEstado("enviando")
     try {
       await emailjs.send(
-        "service_yeeoz1g",
-        "template_4kc1a1f",
+        "service_kg3p5fe",
+        "template_4mugnaf",
         {
           nombre:   formData.nombre,
           email:    formData.email,
@@ -70,7 +70,7 @@ function Contacto() {
           ciudad:   formData.ciudad,
           mensaje:  formData.mensaje,
         },
-        "9QZ-memxSyPdfwuFJ"
+        "LdXliXXWhbQTnetkX"
       )
       setEstado("ok")
       setFormData({ nombre: "", email: "", telefono: "", ciudad: "", mensaje: "" })
