@@ -8,8 +8,7 @@ function Referencias() {
 
   const proyectos = [
     {
-      titulo: "Vivero de madera",
-      descripcion: "Vivero de madera",
+      titulo: "Bodega de vino",
       imagenes: [
         "https://res.cloudinary.com/da5rambq9/image/upload/q_auto/f_auto/v1776431987/faustino_4_l81um6.jpg",
         "https://res.cloudinary.com/da5rambq9/image/upload/q_auto/f_auto/v1776431988/faustino_10_xctyfo.jpg",
@@ -28,7 +27,7 @@ function Referencias() {
       ]
     },
     {
-      titulo: "Le dome",
+      titulo: "Bodega de vino",
       descripcion: "Estructura geodésica realizada en madera",
       imagenes: [
         "https://res.cloudinary.com/da5rambq9/image/upload/q_auto/f_auto/v1776431996/le_dome_13_ommeis.jpg",

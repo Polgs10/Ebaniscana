@@ -84,7 +84,7 @@ function Servicios() {
       </section>
 
       {/* SERVICIOS */}
-      <section className="bg-[#F8F6F3] py-20">
+      {/* <section className="bg-[#F8F6F3] py-20">
         <div className="max-w-6xl mx-auto px-6">
 
           <p className="text-[#8B5A2B] uppercase tracking-widest text-sm text-center mb-3">Especialidades</p>
@@ -101,7 +101,7 @@ function Servicios() {
           </div>
 
         </div>
-      </section>
+      </section> */}
 
       {/* CTA */}
       <section className="bg-[#1f2933] text-white py-16 text-center">

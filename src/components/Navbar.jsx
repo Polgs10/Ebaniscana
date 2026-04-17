@@ -14,10 +14,10 @@ function Navbar() {
         <img
           src="/EbaniscanaLogo.png"
           alt="Ebaniscana"
-          className="h-10 w-auto"
+          className="h-16 w-auto"
         />
 
-        <span className="text-2xl font-bold text-[#C89B6D]">
+        <span className="text-4xl font-bold text-[#C89B6D]">
           Ebaniscana
         </span>
 

@@ -58,7 +58,7 @@ return(
             </h4>
 
             <p className="text-gray-300">
-            📍 Granada, España
+            📍 Piñuecar, Madrid, España
             </p>
 
             <p className="text-gray-300">
