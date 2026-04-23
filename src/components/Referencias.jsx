@@ -8,7 +8,7 @@ function Referencias() {
 
   const proyectos = [
     {
-      titulo: "Bodega de vino",
+      titulo: "Bodega de vino en Logroño",
       imagenes: [
         "https://res.cloudinary.com/da5rambq9/image/upload/q_auto/f_auto/v1776431987/faustino_4_l81um6.jpg",
         "https://res.cloudinary.com/da5rambq9/image/upload/q_auto/f_auto/v1776431988/faustino_10_xctyfo.jpg",
@@ -19,15 +19,14 @@ function Referencias() {
         "https://res.cloudinary.com/da5rambq9/image/upload/q_auto/f_auto/v1776431988/faustino_14_rozwvv.jpg",
         "https://res.cloudinary.com/da5rambq9/image/upload/q_auto/f_auto/v1776431988/faustino_15_b3lid4.jpg",
         "https://res.cloudinary.com/da5rambq9/image/upload/q_auto/f_auto/v1776431988/faustino_12_lpdfyg.jpg",
-        "https://res.cloudinary.com/da5rambq9/image/upload/q_auto/f_auto/v1776431988/faustino_11_ikacwb.jpg",
-        "https://res.cloudinary.com/da5rambq9/image/upload/q_auto/f_auto/v1776431986/faustino_2_odrkvo.jpg",
         "https://res.cloudinary.com/da5rambq9/image/upload/q_auto/f_auto/v1776431986/faustino_1_cyo6ms.jpg",
         "https://res.cloudinary.com/da5rambq9/image/upload/q_auto/f_auto/v1776431988/faustino_13_qb49m7.jpg",
-        "https://res.cloudinary.com/da5rambq9/image/upload/q_auto/f_auto/v1776431988/faustino_eieblw.jpg"
+        "https://res.cloudinary.com/da5rambq9/image/upload/q_auto/f_auto/v1776431988/faustino_eieblw.jpg",
+        "https://res.cloudinary.com/da5rambq9/image/upload/q_auto/f_auto/v1776431996/le_dome_10_jb76fq.jpg"
       ]
     },
     {
-      titulo: "Bodega de vino",
+      titulo: "Bodega de vino en Burdeos,Francia",
       descripcion: "Estructura geodésica realizada en madera",
       imagenes: [
         "https://res.cloudinary.com/da5rambq9/image/upload/q_auto/f_auto/v1776431996/le_dome_13_ommeis.jpg",
@@ -42,11 +41,12 @@ function Referencias() {
         "https://res.cloudinary.com/da5rambq9/image/upload/q_auto/f_auto/v1776431996/le_dome_9_nwseiz.jpg",
         "https://res.cloudinary.com/da5rambq9/image/upload/q_auto/f_auto/v1776431995/le_dome_6_ct8j7h.jpg",
         "https://res.cloudinary.com/da5rambq9/image/upload/q_auto/f_auto/v1776431995/le_dome_4_qs6dxb.jpg",
-        "https://res.cloudinary.com/da5rambq9/image/upload/q_auto/f_auto/v1776431996/le_dome_10_jb76fq.jpg"
+        "https://res.cloudinary.com/da5rambq9/image/upload/q_auto/f_auto/v1776431988/faustino_11_ikacwb.jpg",
+        "https://res.cloudinary.com/da5rambq9/image/upload/q_auto/f_auto/v1776431986/faustino_2_odrkvo.jpg"
       ]
     },
     {
-      titulo: "Carcabas",
+      titulo: "Vivienda en Madrid",
       descripcion: "Escalera en espiral realizada en madera de roble y estructura metálica",
       imagenes: [
         "https://res.cloudinary.com/da5rambq9/image/upload/q_auto/f_auto/v1776431983/carcabas_3_lcl2xi.jpg",
@@ -71,7 +71,7 @@ function Referencias() {
       ]
     },
     {
-      titulo: "La finca",
+      titulo: "La finca Madrid",
       descripcion: "",
       imagenes: [
         "https://res.cloudinary.com/da5rambq9/image/upload/q_auto/f_auto/v1776431994/la_finca_xvrxs5.jpg",

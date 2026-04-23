@@ -84,7 +84,7 @@ function Hero() {
           <div>
             <p className="text-[#8B5A2B] uppercase tracking-widest text-sm mb-3">Quiénes somos</p>
             <h2 className="text-4xl font-bold text-[#1f2933] mb-6">
-              Artesanos con más de 20 años de experiencia
+              Tercera generación de ebanistas
             </h2>
             <p className="text-gray-600 mb-6">
               En Ebaniscana somos especialistas en carpintería y ebanistería artesanal.
