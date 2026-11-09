@@ -1,12 +1,12 @@
 import { Link } from "react-router-dom"
 
-function Footer(){
+function Footer({ onManageCookies }){
 
 return(
 
 <footer className="bg-[#1f2933] text-white mt-20">
 
-    <div className="max-w-6xl mx-auto px-6 py-12 grid md:grid-cols-4 gap-10">
+    <div className="max-w-6xl mx-auto px-6 py-12 grid md:grid-cols-2 lg:grid-cols-5 gap-10">
 
         <div>
             <h3 className="text-xl font-bold text-[#C89B6D] mb-4">
@@ -42,12 +42,27 @@ return(
             <h4 className="font-semibold mb-4">Empresa</h4>
             <ul className="space-y-2 text-gray-300">
                 <li className="group relative w-fit">
-                <Link to="/sobre" className="transition-all duration-300 group-hover:text-[#C89B6D] group-hover:-translate-y-1 inline-block">Sobre Nosotros</Link>
+                <Link to="/sobrenosotros" className="transition-all duration-300 group-hover:text-[#C89B6D] group-hover:-translate-y-1 inline-block">Sobre Nosotros</Link>
                 <span className="absolute left-0 bottom-0 w-0 h-[2px] bg-[#C89B6D] transition-all duration-300 group-hover:w-full"></span>
                 </li>
                 <li className="group relative w-fit">
                 <Link to="/contacto" className="transition-all duration-300 group-hover:text-[#C89B6D] group-hover:-translate-y-1 inline-block">Contacto</Link>
                 <span className="absolute left-0 bottom-0 w-0 h-[2px] bg-[#C89B6D] transition-all duration-300 group-hover:w-full"></span>
+                </li>
+            </ul>
+        </div>
+
+        <div>
+            <h4 className="font-semibold mb-4">Información legal</h4>
+            <ul className="space-y-2 text-gray-300">
+                <li><Link to="/aviso-legal" className="hover:text-[#C89B6D]">Aviso legal</Link></li>
+                <li><Link to="/privacidad" className="hover:text-[#C89B6D]">Privacidad</Link></li>
+                <li><Link to="/terminos" className="hover:text-[#C89B6D]">Términos y condiciones</Link></li>
+                <li><Link to="/cookies" className="hover:text-[#C89B6D]">Política de cookies</Link></li>
+                <li>
+                    <button type="button" onClick={onManageCookies} className="hover:text-[#C89B6D]">
+                        Configurar cookies
+                    </button>
                 </li>
             </ul>
         </div>
